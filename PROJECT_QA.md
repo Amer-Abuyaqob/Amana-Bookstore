@@ -319,3 +319,69 @@ export interface Book {
 
 - `public/`: static assets served as-is at the site root, e.g., `public/images/book1.jpg` referenced as `/images/book1.jpg` from code.
 - `app/`: application code for routes, components, and logic (Next.js App Router).
+
+---
+
+### Site Customizations (UI Tweaks Implemented)
+
+We made five minor, cohesive style updates to polish the UI. Each item below includes a short description and a code reference to the exact edit.
+
+1. Hero section restyle (background tint and larger heading)
+
+```16:23:Amana-Bookstore/src/app/page.tsx
+    <div className="container mx-auto px-4 py-8">
+      {/* Welcome Section */}
+      <section className="text-center bg-indigo-50 p-10 rounded-xl mb-12 shadow-md">
+        <h1 className="text-5xl font-extrabold text-gray-900 tracking-tight mb-3">
+          Welcome to the Amana Bookstore!
+        </h1>
+        <p className="text-xl text-gray-600">
+```
+
+2. Primary buttons: blue → indigo (cards and list items)
+
+```132:144:Amana-Bookstore/src/app/components/BookCard.tsx
+                : isAddingToCart
+                ? 'bg-indigo-400 text-white cursor-wait'
+                : 'bg-indigo-600 text-white hover:bg-indigo-700 cursor-pointer'
+```
+
+```159:167:Amana-Bookstore/src/app/components/BookListItem.tsx
+                      ? 'bg-indigo-400 text-white cursor-wait'
+                      : 'bg-indigo-600 text-white hover:bg-indigo-700 cursor-pointer'
+```
+
+3. Navbar active/hover color and badge: blue → indigo
+
+```52:63:Amana-Bookstore/src/app/components/Navbar.tsx
+          <Link href="/" className={`text-gray-600 hover:text-indigo-600 cursor-pointer ${pathname === '/' ? 'text-indigo-600 font-semibold' : ''}`}>
+            Home
+          </Link>
+          <Link href="/cart" className={`text-gray-600 hover:text-indigo-600 flex items-center cursor-pointer ${pathname === '/cart' ? 'text-indigo-600 font-semibold' : ''}`}>
+            My Cart
+            {cartItemCount > 0 && (
+              <span className="ml-2 bg-indigo-600 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
+```
+
+4. Pagination active state: blue → indigo
+
+```102:109:Amana-Bookstore/src/app/components/Pagination.tsx
+                  className={`px-3 py-2 rounded-lg border text-sm font-medium transition-colors cursor-pointer ${
+                    currentPage === page
+                      ? 'bg-indigo-600 text-white border-indigo-600'
+                      : 'bg-white text-gray-700 border-gray-300 hover:bg-gray-50 hover:border-gray-400'
+                  }`}
+```
+
+5. Featured section subtitle for context
+
+```199:205:Amana-Bookstore/src/app/components/BookGrid.tsx
+        </div>
+        <p className="text-gray-500 mb-6">Hand-picked highlights from our catalog</p>
+```
+
+Impact summary
+
+- Unified accent color (indigo) across buttons, navbar, and pagination.
+- More prominent, welcoming hero area.
+- Featured section has a brief explanatory subtitle.
