@@ -884,7 +884,7 @@ export const books: Book[] = [
     price: 84.5,
     image: '/images/book4.jpg',
     isbn: '978-4678901234',
-    genre: ['Computer Science", "Data Visualization'],
+    genre: ['Computer Science', 'Data Visualization'],
     tags: ['D3.js', 'React', 'Frontend'],
     datePublished: '2024-02-11',
     pages: 432,
