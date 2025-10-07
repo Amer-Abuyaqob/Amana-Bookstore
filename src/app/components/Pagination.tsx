@@ -1,7 +1,7 @@
 // src/app/components/Pagination.tsx
-'use client';
+"use client";
 
-import React from 'react';
+import React from "react";
 
 interface PaginationProps {
   currentPage: number;
@@ -39,7 +39,7 @@ const Pagination: React.FC<PaginationProps> = ({
       pages.push(1);
 
       if (currentPage > 4) {
-        pages.push('...');
+        pages.push("...");
       }
 
       // Show pages around current page
@@ -53,7 +53,7 @@ const Pagination: React.FC<PaginationProps> = ({
       }
 
       if (currentPage < totalPages - 3) {
-        pages.push('...');
+        pages.push("...");
       }
 
       // Always show last page if there's more than one page
@@ -84,8 +84,8 @@ const Pagination: React.FC<PaginationProps> = ({
           disabled={currentPage === 1}
           className={`px-3 py-2 rounded-lg border text-sm font-medium transition-colors ${
             currentPage === 1
-              ? 'bg-gray-100 text-gray-400 border-gray-200 cursor-not-allowed'
-              : 'bg-white text-gray-700 border-gray-300 hover:bg-gray-50 hover:border-gray-400 cursor-pointer'
+              ? "bg-gray-100 text-gray-400 border-gray-200 cursor-not-allowed"
+              : "bg-white text-gray-700 border-gray-300 hover:bg-gray-50 hover:border-gray-400 cursor-pointer"
           }`}
           aria-label="Previous page"
         >
@@ -96,18 +96,18 @@ const Pagination: React.FC<PaginationProps> = ({
         <div className="flex items-center space-x-1">
           {getPageNumbers().map((page, index) => (
             <React.Fragment key={index}>
-              {page === '...' ? (
+              {page === "..." ? (
                 <span className="px-3 py-2 text-gray-500">...</span>
               ) : (
                 <button
                   onClick={() => onPageChange(page as number)}
                   className={`px-3 py-2 rounded-lg border text-sm font-medium transition-colors cursor-pointer ${
                     currentPage === page
-                      ? 'bg-blue-600 text-white border-blue-600'
-                      : 'bg-white text-gray-700 border-gray-300 hover:bg-gray-50 hover:border-gray-400'
+                      ? "bg-indigo-600 text-white border-indigo-600"
+                      : "bg-white text-gray-700 border-gray-300 hover:bg-gray-50 hover:border-gray-400"
                   }`}
                   aria-label={`Go to page ${page}`}
-                  aria-current={currentPage === page ? 'page' : undefined}
+                  aria-current={currentPage === page ? "page" : undefined}
                 >
                   {page}
                 </button>
@@ -122,8 +122,8 @@ const Pagination: React.FC<PaginationProps> = ({
           disabled={currentPage === totalPages}
           className={`px-3 py-2 rounded-lg border text-sm font-medium transition-colors ${
             currentPage === totalPages
-              ? 'bg-gray-100 text-gray-400 border-gray-200 cursor-not-allowed'
-              : 'bg-white text-gray-700 border-gray-300 hover:bg-gray-50 hover:border-gray-400 cursor-pointer'
+              ? "bg-gray-100 text-gray-400 border-gray-200 cursor-not-allowed"
+              : "bg-white text-gray-700 border-gray-300 hover:bg-gray-50 hover:border-gray-400 cursor-pointer"
           }`}
           aria-label="Next page"
         >
