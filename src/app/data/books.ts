@@ -874,5 +874,25 @@ export const books: Book[] = [
     reviewCount: 16,
     inStock: true,
     featured: true,
-  }
+  },
+  {
+    id: '46',
+    title: 'Data Visualization with D3 and React',
+    author: 'Eng. Noor Al-Hassan',
+    description:
+      'Practical guide to building interactive data visualizations on the web using D3.js integrated with modern React patterns.',
+    price: 84.5,
+    image: '/images/book4.jpg',
+    isbn: '978-4678901234',
+    genre: ['Computer Science", "Data Visualization'],
+    tags: ['D3.js', 'React', 'Frontend'],
+    datePublished: '2024-02-11',
+    pages: 432,
+    language: 'English',
+    publisher: 'Al-Jazari Web Systems',
+    rating: 4.4,
+    reviewCount: 5,
+    inStock: true,
+    featured: false,
+  },
 ];
